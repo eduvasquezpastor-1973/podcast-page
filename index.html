@@ -1,68 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Podcast Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background: #f4f4f4;
-            margin: 0;
             padding: 20px;
         }
 
         .podcast-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
+            max-width: 900px;
+            margin: auto;
         }
 
-        .podcast-card {
-            position: relative;
+        .podcast {
             background: white;
-            padding: 15px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             text-align: center;
+            transition: transform 0.2s ease;
         }
 
-        .podcast-image {
+        .podcast:hover {
+            transform: scale(1.03);
+        }
+
+        .podcast img {
             width: 100%;
-            height: 200px;
-            border-radius: 10px;
+            height: 250px;
             object-fit: cover;
-            transition: opacity 0.3s;
+            transition: opacity 0.3s ease;
         }
 
-        .podcast-description {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            right: 15px;
-            bottom: 100px;
-            background: rgba(0,0,0,0.7);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 10px;
-            border-radius: 10px;
-            opacity: 0;
-            transition: opacity 0.3s;
+        .description {
+            display: none;
+            padding: 15px;
+            font-size: 14px;
         }
 
-        .podcast-card:hover .podcast-description {
-            opacity: 1;
+        .podcast:hover img {
+            opacity: 0.2;
+        }
+
+        .podcast:hover .description {
+            display: block;
+            margin-top: -240px;
+            color: black;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
         }
 
         button {
-            margin-top: 10px;
+            margin: 15px 0;
             padding: 10px 20px;
-            border: none;
             background: #0073e6;
             color: white;
+            border: none;
             border-radius: 5px;
             cursor: pointer;
         }
@@ -70,28 +71,55 @@
         button:hover {
             background: #005bb5;
         }
+
+        audio {
+            width: 90%;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
-    <h1>My Podcast Page</h1>
+
+    <h1 style="text-align:center;">Podcast Gallery</h1>
 
     <div class="podcast-container">
-        <!-- PODCAST CARD EXAMPLE -->
-        <div class="podcast-card">
-            <img src="podcast1.jpg" class="podcast-image" alt="Podcast Cover">
 
-            <div class="podcast-description">
-                This is a description of Podcast 1. You can add anything you want here.
-            </div>
-
-            <button onclick="document.getElementById('audio1').play()">▶ Listen</button>
-            <br>
-            <audio id="audio1" controls style="width: 100%; margin-top: 10px;">
-                <source src="podcast1.mp3" type="audio/mpeg">
+        <!-- Podcast 1 -->
+        <div class="podcast">
+            <img src="https://raw.githubusercontent.com/eduvasquezpastor-1973/podcast-page/main/MAURICIO_LAUCATA.jpeg" />
+            <div class="description">Podcast with Mauricio Laucata — Description goes here.</div>
+            <audio controls>
+                <source src="#" type="audio/mpeg">
             </audio>
         </div>
 
-        <!-- MORE CARDS CAN BE ADDED HERE -->
+        <!-- Podcast 2 -->
+        <div class="podcast">
+            <img src="https://raw.githubusercontent.com/eduvasquezpastor-1973/podcast-page/main/RUBI_CAPAJAÑA.jpeg" />
+            <div class="description">Podcast with Rubi Capajaña — Description goes here.</div>
+            <audio controls>
+                <source src="#" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <!-- Podcast 3 -->
+        <div class="podcast">
+            <img src="https://raw.githubusercontent.com/eduvasquezpastor-1973/podcast-page/main/CARLOS_MANUEL_CAHUANA.jpeg" />
+            <div class="description">Podcast with Carlos Manuel Cahuana — Description goes here.</div>
+            <audio controls>
+                <source src="#" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <!-- Podcast 4 -->
+        <div class="podcast">
+            <img src="https://raw.githubusercontent.com/eduvasquezpastor-1973/podcast-page/main/KIARA.jpeg" />
+            <div class="description">Podcast with Kiara — Description goes here.</div>
+            <audio controls>
+                <source src="#" type="audio/mpeg">
+            </audio>
+        </div>
+
     </div>
 
 </body>
