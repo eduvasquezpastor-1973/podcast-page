@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Podcast Page</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,61 +21,48 @@
         }
 
         .podcast {
+            position: relative;
             background: white;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             text-align: center;
-            transition: transform 0.2s ease;
-        }
-
-        .podcast:hover {
-            transform: scale(1.03);
         }
 
         .podcast img {
             width: 100%;
             height: 250px;
-            object-fit: cover;
-            transition: opacity 0.3s ease;
+            object-fit: cover; /* FIXED IMAGE FITTING */
+            display: block;
         }
 
+        /* Hover overlay style */
         .description {
-            display: none;
-            padding: 15px;
-            font-size: 14px;
-        }
-
-        .podcast:hover img {
-            opacity: 0.2;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 250px;
+            background: rgba(0,0,0,0.55);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+            text-align: center;
         }
 
         .podcast:hover .description {
-            display: block;
-            margin-top: -240px;
-            color: black;
-            font-weight: bold;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-        }
-
-        button {
-            margin: 15px 0;
-            padding: 10px 20px;
-            background: #0073e6;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #005bb5;
+            opacity: 1;
         }
 
         audio {
             width: 90%;
-            margin-bottom: 15px;
+            margin: 12px 0 18px 0;
         }
     </style>
 </head>
@@ -84,40 +72,28 @@
 
     <div class="podcast-container">
 
-        <!-- Podcast 1 -->
         <div class="podcast">
             <img src="https://raw.githubusercontent.com/eduvasquezpastor-1973/podcast-page/main/MAURICIO_LAUCATA.jpeg" />
             <div class="description">Podcast with Mauricio Laucata — Description goes here.</div>
-            <audio controls>
-                <source src="#" type="audio/mpeg">
-            </audio>
+            <audio controls></audio>
         </div>
 
-        <!-- Podcast 2 -->
         <div class="podcast">
             <img src="https://raw.githubusercontent.com/eduvasquezpastor-1973/podcast-page/main/RUBI_CAPAJAÑA.jpeg" />
             <div class="description">Podcast with Rubi Capajaña — Description goes here.</div>
-            <audio controls>
-                <source src="#" type="audio/mpeg">
-            </audio>
+            <audio controls></audio>
         </div>
 
-        <!-- Podcast 3 -->
         <div class="podcast">
             <img src="https://raw.githubusercontent.com/eduvasquezpastor-1973/podcast-page/main/CARLOS_MANUEL_CAHUANA.jpeg" />
             <div class="description">Podcast with Carlos Manuel Cahuana — Description goes here.</div>
-            <audio controls>
-                <source src="#" type="audio/mpeg">
-            </audio>
+            <audio controls></audio>
         </div>
 
-        <!-- Podcast 4 -->
         <div class="podcast">
             <img src="https://raw.githubusercontent.com/eduvasquezpastor-1973/podcast-page/main/KIARA.jpeg" />
             <div class="description">Podcast with Kiara — Description goes here.</div>
-            <audio controls>
-                <source src="#" type="audio/mpeg">
-            </audio>
+            <audio controls></audio>
         </div>
 
     </div>
